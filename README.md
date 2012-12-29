@@ -77,5 +77,6 @@ Documentation
 Updates
 -------
 *29 December 2012*
+
 1. Removed `{block:Pagination} {/block:Pagination}` from footer so that the new and older page links will appear correctly
 2. Changed `#header > a`'s `line-height` to 2ems.
