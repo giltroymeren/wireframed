@@ -122,7 +122,7 @@
             color: {color:Light};
             font-size: 1.5em;
             font-weight: bold;
-            line-height: 1;
+            line-height: 2;
             text-transform: uppercase;
         }
         #header > h1 > a:hover {
@@ -699,7 +699,6 @@
                 </p>
             </div>
 
-            {block:PermalinkPagination}                
             <div class="pagination footer-part">
                 {block:PreviousPage}
                 <a href="{PreviousPage}">Newer Posts</a>
@@ -709,7 +708,6 @@
                 <a href="{NextPage}">Older Posts</a>
                 {/block:NextPage}
             </div>
-            {/block:PermalinkPagination}
 
             <ul class="sitemap footer-part">
                 <li><a href="/">Home</a></li>
