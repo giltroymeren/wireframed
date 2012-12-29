@@ -1,8 +1,7 @@
 [wireframed](http://www.tumblr.com/theme/36746)
 ==========
 
-A tumblr theme with wires and boxes
-Waiting for moderators' approval
+A tumblr theme with wires and boxes (waiting for moderators' approval)
 
 Installation
 ------------
@@ -31,11 +30,11 @@ Documentation
 - Sidebar contains:
   - Item header (*About Me*, *Links*, etc.)
   - Blog description
-    - a 96px by 96px photo intended for the blog
-    - blog description (can contain HTML)
+      - a 96px by 96px photo intended for the blog
+      - blog description (can contain HTML)
   - Links list
-    - contains the basic links (Homes, RSS Feed, etc.)
-    - custom pages are automatically added to this list
+        - contains the basic links (Homes, RSS Feed, etc.)
+        - custom pages are automatically added to this list
   - search form
   - Twitter integration (if you enable twitter connection with tumblr)
 - Footer contains:
@@ -52,8 +51,8 @@ Documentation
   - [Meyer Reset](http://meyerweb.com/eric/tools/css/reset/) by Eric Meyer
   - `normalize.css` from the [Bootstrap](http://twitter.github.com/bootstrap/) package
 - Fonts by [Google Web Fonts](http://www.google.com/webfonts)
-  - [*Dosis*](http://www.google.com/webfonts/specimen/Dosis) by Pablo Impallari
-  - [*Droid Sans*](http://www.google.com/webfonts/specimen/Droid+Sans) by Steve Matteson
+  - [Dosis](http://www.google.com/webfonts/specimen/Dosis) by Pablo Impallari
+  - [Droid Sans](http://www.google.com/webfonts/specimen/Droid+Sans) by Steve Matteson
 
 ### Customization Defaults
 - Colors
