@@ -80,3 +80,5 @@ Updates
 
 1. Removed `{block:Pagination} {/block:Pagination}` from footer so that the new and older page links will appear correctly
 2. Changed `#header > a`'s `line-height` to 2ems.
+3. Changed `.post > .post-details > .tags > li`'s margin to `3px 10px 0 0` to allow better stacking when comprising two or more lines
+4. Change footer's height to `auto` to prevent children from leaking when browser is resized
