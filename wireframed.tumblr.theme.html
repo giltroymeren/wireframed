@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- 
+    WIREFRAMED// theme for tumblr.com
+    Made by Troy Meren
+    29 December 2012
+    http://wireframedtheme.tumblr.com
+    http://thekalaban.tumblr.com
+    http://tororoy.tumblr.com
+    http://somelitrato.tumblr.com
+-->
+
+<head>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
+    <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/tuwgdnw/Wtbmfnxfq/meyer-normalize.css" />
+
+    <!-- options -->
+    <meta name="color:Accent" content="#00AAFF">
+    <meta name="color:Complement" content="#FF7300">
+    <meta name="color:Dark" content="#000000">
+    <meta name="color:Light" content="#F7F7F7">
+    <meta name="color:Mid dark" content="#AAAAAA">
+    <meta name="color:Lighter dark" content="#DDDDDD">
+
+    <meta name="if:Show header" content="1">
+    <meta name="if:Show post separator" content="1">
+    <meta name="if:Show permalink" content="1">
+    <meta name="if:Show tags" content="1">
+    <meta name="if:Show reblog source" content="1">
+    <meta name="if:Show sidebar" content="1">
+    <meta name="if:Show blog photo" content="1">
+
+    <style type="text/css">
+
+        html, body {
+            height: 100%;
+        }
+
+        html { 
+            background: {color:Light};
+        }
+
+        body, #page-wrap {
+           margin: 0;
+           overflow-x: hidden;
+           padding: 0;
+           width: 100%;
+           font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+           -webkit-font-smoothing: subpixel-antialiased;
+       }
+
+       /*Opera Fix*/
+       body:before {
+        content:"";
+        height:100%;
+        float:left;
+        width:0;
+        margin-top:-32767px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Dosis', sans-serif;
+            line-height: 1;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+
+        p {
+            padding: 3px 0;
+        }
+
+        a {
+            color: {color:Accent};
+        }
+
+        a:hover {
+            color: {color:Complement};
+        }
+
+        blockquote { 
+            margin-left: 30px;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .layout {
+            padding: 2.5%;
+        }
+
+        .emphasis {
+            font-family: 'Dosis', sans-serif;    
+        }
+        #page-wrap {
+            margin: 0 auto;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        {block:IfShowHeader}
+        #header {
+            margin: 2.5% 0;
+        }
+        #header > h1 {
+            margin: 15px 5%;
+            padding: 15px;
+            text-align: center;
+        }
+        #header > h1 > a {
+            padding: 15px;
+            background: {color:Dark};
+            color: {color:Light};
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        #header > h1 > a:hover {
+            background: {color:Light};
+            border: 1px solid #000;
+            color: #000;
+        }
+        {/block:IfShowHeader}
+
+        {block:IfNotShowHeader}
+        #main-wrap {
+            margin-top: 5%;
+            border-top: 10px solid {color:Dark};
+        }
+        {/block:IfNotShowHeader}
+
+        #main-wrap {
+            margin: 0 auto;
+            padding-bottom: 150px; /* height of footer */
+            width: 75%;
+        }
+
+        #post-container {
+            float: left;
+            width: 80%;
+        }
+        {block:IfShowPostSeparator}
+        #post-container > li {
+          border-bottom: 1px solid {color:MidDark};
+        }
+
+        #post-container > li:last-child {
+          border: 0;
+        }
+        {/block:IfShowPostSeparator}
+
+        /* default style for lists inside the posts */
+        .post ol li,
+        .post ul li { 
+            margin-left: 2em;    
+        }
+        .post ul li {
+            list-style-type: square;
+        }
+        .post ol li {
+            list-style-type: decimal;
+        }
+
+        /* actual post styles */
+        #post-container .post {
+          padding: 5% 2.5%;
+        }
+
+        #post-container .wide-letters > p {
+          line-height: 1.75;
+        }
+
+        .post > .post-details {
+            margin-top: 25px;
+            line-height: 1;
+        }
+
+        .post > .note-history {
+            padding: 5% 0;    
+            border-top: 1px solid {color:MidDark};
+        }    
+        /* permalink style */    
+        ol.notes {
+            padding: 0px;
+            margin: 25px 0px;
+            list-style-type: none;
+        }
+
+        ol.notes li.note {
+            border-top: solid 1px #ccc;
+            padding: 10px;
+        }
+
+        ol.notes li.note img.avatar {
+            vertical-align: -4px;
+            margin-right: 10px;
+            width: 16px;    
+            height: 16px;
+        }
+
+        ol.notes li.note span.action {
+            font-weight: bold;
+        }
+
+        ol.notes li.note .answer_content {
+            font-weight: normal;
+        }
+
+        ol.notes li.note blockquote {
+            border-color: #eee;
+            padding: 4px 10px;
+            margin: 10px 0px 0px 25px;
+        }
+
+        ol.notes li.note blockquote a {
+            text-decoration: none;
+        }
+
+        ol.notes li.note:nth-child(odd) {
+            background: {color:LighterDark};    
+        }
+
+        .post > .post-details > .permalink {
+          text-transform: uppercase;
+        }
+
+        .post > .post-details > .tags {
+        }
+        .post > .post-details > .tags > li {
+            margin: 0;
+            margin-right: 10px;
+            padding: 3px 5px;
+            border: 1px solid {color:Dark};
+            display: inline-block;
+        }
+
+        .post > .source {
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+
+        .post > .title {
+          padding-bottom: 3px;
+          font-size: 2.5em;
+        }
+        .post > .title > a:focus { 
+            background: {color:Accent};
+            color: {color:Dark};
+        }
+
+        .post .caption {
+            padding: 10px 0;
+        }
+
+        /* individual post type styles */
+        .answer > .asker {
+            margin-bottom: 10px;
+            border: 1px solid {color:Dark};
+        }
+        .asker > p, .asker > h3 {
+            padding: 10px;
+        }
+        .answer > .asker > span {
+            padding: 0 10px;
+        }
+        .answer > .asker > h3 {
+            background: {color:Dark};
+            color: {color:Light};
+            font-size: 2em;
+        }
+
+        .link > h3 {
+            padding: 2.5% 0;
+        }
+        .link > h3 > a {
+            padding: 1.5% 2.5%;
+            background: {color:LighterDark};
+            border: 1px solid {color:Dark};
+            color: {color:Dark};
+            font-size: 1.75em;
+        }   
+        .link > h3 > a:hover {
+            background: #555;
+            color: {color:Light};
+        }
+
+        .chat-list {
+            padding: 0;
+            border: 1px solid {color:Dark};
+        }
+        .chat-list > li {
+            margin: 0 !important;
+            padding: 3px 5px;
+            list-style-type: none !important;
+        }
+        .chat-list > .even {
+            background: {color:LighterDark};
+        }
+
+        .chat-list .person {
+            font-size: 0.75em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .quote > h3 {
+            margin-bottom: 0.5em;
+            font-size: 2.5em; 
+        }
+        .quote > h3 > span {            
+            margin-left: -0.35em;
+            position: relative;
+        }
+
+        .audio-info p {
+            float: left;
+            padding: 2.5%;
+            width: 45%;
+        }
+        .audio-info span {
+            font-weight: bold;     
+        }
+
+        .video iframe {
+            width: 100%;
+        }
+
+        {block:IfShowSidebar}
+        #sidebar {
+            float: left;
+            width: 19%;
+            font-size: 0.75em;
+        }
+        #sidebar .sidepart {
+          padding: 15px;
+        }
+
+        #sidebar h2 {
+            padding: 3px 0;
+            font-size: 2em;
+        }
+
+        #sidebar > .description > img {
+            padding: 5px;
+        }
+
+        #sidebar > .links > li {
+            padding: 1px 0;    
+            font-size: 1.25em;
+            font-weight: normal;
+        }
+        {/block:IfShowSidebar}
+
+        {block:IfNotShowSidebar}
+        #sidebar {
+            display: none;
+        }
+        #post-container {
+            float: none;
+            width: 100%;
+        }
+        {/block:IfNotShowSidebar}
+
+        #footer {
+            height: 75px;
+            margin-top: -75px; /* negative value of footer height */
+            padding: 1% 5%;
+            position: relative;
+            background: {color:Dark};
+            color: {color:Light};
+        }
+        #footer > p {
+        }
+
+        #footer > .footer-part {
+            float: left;
+            margin: 0 2.5%;
+            width: 20%;    
+        }
+
+        #footer > .sitemap {
+            float: right;
+        }
+        #footer > .sitemap > li {
+            display: inline-block;
+            padding: 3px 8px;
+        }
+
+        #footer .pagination {
+            width: 45%;
+            text-align: center;
+            text-transform: uppercase;    
+        }
+        #footer .pagination > a {
+            padding: 0 2.5%;
+        }
+
+        #tweets {
+            margin-top: 7px;
+        }
+        #tweets .content {
+            padding: 3px;
+            font-size: 1.125em;
+        }
+        #tweets a:nth-child(odd) p {
+         background: #DDD;   
+        }
+
+        /*Clearfix Hack
+          By Nicholas Gallagher
+          http://nicolasgallagher.com/micro-clearfix-hack/*/
+          .clearfix{
+           zoom:1;
+        }
+        .clearfix:before, .clearfix:after {
+            content:"";
+            display:table;
+        }
+        .clearfix:after {
+            clear:both;
+        }
+
+        {CustomCSS} 
+    </style>
+
+</head>
+
+<body>
+
+    <div id="page-wrap" class="clearfix">
+
+        {block:IfShowHeader}
+        <div id="header" class="clearfix">
+            <h1><a href="/">{Title}</a></h1>
+        </div>
+        {/block:IfShowHeader}
+
+        <div id="main-wrap" class="clearfix">
+
+            <ol id="post-container" class="clearfix">
+                {block:Posts}
+                
+                <li class="post clearfix 
+                {block:Text} text {/block:Text}
+                {block:Ask} ask {/block:Ask}
+                {block:Submit} submit {/block:Submit}
+                {block:Answer} answer {/block:Answer}
+                {block:Link} link {/block:Link}
+                {block:Chat} chat {/block:Chat}
+                {block:Quote} quote {/block:Quote}
+                {block:Photo} photo {/block:Photo}
+                {block:Photoset} photoset {/block:Photoset}
+                {block:Audio} audio {/block:Audio}
+                {block:Video} video {/block:Video}
+                ">
+                <!-- start specific block type upper -->
+                    {block:Text}
+                    <h3 class="title"><a href="{Permalink}">{Title}</a></h3>
+                    {Body}
+                    {/block:Text}
+
+                    {block:Answer}
+                    <div class="asker">
+                        <p>    
+                            <img src="{AskerPortraitURL-48}">
+                            <span>{Asker} asked:</span>
+                        </p>
+                        <h3>{Question}</h3>
+
+                    </div>
+                    <div class="caption">
+                        {Answer}
+                    </div>
+                    {/block:Answer}
+
+                    {block:Link}
+                    <h3>
+                        <a {Target} href="{URL}">
+                            {Name}&nbsp;<span>&#8594;</span>
+                        </a>                
+                    </h3>
+                    {block:Description}
+                    <div class="caption">{Description}</div>
+                    {/block:Description}
+                    {/block:Link}
+
+                    {block:Chat}
+                    {block:Title}
+                    <h3 class="title"><a href="{Permalink}">{Title}</a></h3>
+                    {/block:Title}
+
+                    <ul class="chat-list">
+                        {block:Lines}
+                        <li class="{Alt} user_{UserNumber}">
+                            {block:Label}
+                            <span class="person">{Label}</span>
+                            {/block:Label}
+                            <span class="line">{Line}</span>
+                        </li>
+                        {/block:Lines}
+                    </ul>
+                    {/block:Chat}
+
+                    {block:Quote}
+                    <h3><span>&#8220;</span>{Quote}&#8221;</h3>
+                    {Source}
+                    {/block:Quote}
+
+                    {Block:Photo}
+                    {LinkOpenTag}
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                    {LinkCloseTag}
+                    {block:Caption}
+                    <div class="caption">{Caption}</div>
+                    {/block:Caption}    
+                    {/Block:Photo}
+
+                    {block:Photoset}
+                    {Photoset-700}
+                    <div class="caption">
+                        {block:Caption} 
+                        {Caption}
+                        {/block:Caption}    
+                    </div>
+                    {/block:Photoset}
+
+                    {block:Audio}
+                    {AudioPlayerGrey}
+                    <div class="audio-info clearfix">   
+                        {block:AlbumArt}
+                        <p>    
+                            <img src="{AlbumArtURL}" />
+                        </p>
+                        {/block:AlbumArt}
+                        <p>
+                            {PlayCountWithLabel} <br/>
+                            {block:Artist}
+                            <span>Artist:</span>&nbsp;{Artist}
+                            {/block:Artist} <br/>
+                            {block:Album}
+                            <span>Album:</span>&nbsp;{Album}
+                            {/block:Album} <br/>
+                            {block:TrackName}
+                            <span>Song:</span>&nbsp;{TrackName}
+                            {/block:TrackName}
+                        </p>
+                    </div>    
+                    {block:Caption}
+                    <div class="caption">{Caption}</div>
+                    {/block:Caption}    
+                    {/block:Audio}
+
+                    {block:Video}
+                    {Video-700}
+                    {block:Caption}
+                    <div class="caption">{Caption}</div>
+                    {/block:Caption}    
+                    {/block:Video}
+                    <!-- end specific block type upper -->  
+
+                    <!-- SPECIAL -->
+                    <div class="post-details clearfix emphasis">
+                        {block:IfShowPermalink}
+                        <div class="permalink">
+                            <p>
+                                Posted on 
+                                <a href="{Permalink}">
+                                {DayOfMonth} {Month} {Year}</a>
+                                &#8226; <a href="{Permalink}">{NoteCount}</a> notes
+                            </p>
+                        </div>
+                        {/block:IfShowPermalink}
+
+                        {block:IfShowTags}
+                        {block:HasTags}
+                        <ul class="tags">
+                            {block:Tags}
+                            <li>
+                                <a title="Tagged: {Tag}" href="{TagURL}">{Tag}</a>
+                            </li>
+                            {/block:Tags}
+                        </ul>
+                        {/block:HasTags}
+                        {/block:IfShowTags}
+                    </div> <!-- END .post-info -->    
+
+                    <!-- start content source -->
+                    {block:IfShowReblogSource}
+                    {block:ContentSource}
+                    <div class="source emphasis">
+                        {lang:Source}:
+                        <a href="{SourceURL}">
+                            {block:SourceLogo}
+                            <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                            {/block:SourceLogo}
+                            {SourceTitle}
+                        </a>
+                    </div>
+                    {/block:ContentSource}
+                    {/block:IfShowReblogSource}
+                    <!-- end content source -->
+
+                    <!-- Permalink -->
+                    {block:PostNotes}
+                    <div class="note-history"> 
+                        <h2>Notes history:</h2>
+                        {PostNotes-64}
+                    </div>
+                    {/block:PostNotes}
+                </li>
+
+            {/block:Posts}
+
+            </ol>
+
+            {block:IfShowSidebar}
+            <div id="sidebar">
+
+                <div class="description clearfix sidepart">
+                    {block:IfShowBlogPhoto}
+                    <img alt="{PhotoAlt}" src="{PortraitURL-96}">
+                    {/block:IfShowBlogPhoto}
+
+                    <h2>About Me</h2>
+                    {block:Description}
+                    <p>{Description}</p>
+                    {/block:Description}
+                </div>                
+
+                <ul class="links clearfix sidepart">
+                    <h2>Links</h2>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    {block:AskEnabled}
+                    <li><a href="/ask">Ask</a></li>
+                    {/block:AskEnabled}
+                    <li><a href="{RSS}">RSS Feed</a></li>
+                    {block:SubmissionsEnabled}
+                    <li><a href="/submit">Submit</a></li>
+                    {/block:SubmissionsEnabled}
+
+                    {block:HasPages}
+                    {block:Pages}
+                    <li><a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                    {/block:HasPages}
+                </ul>
+
+                <form action="/search" method="get" class="clearfix sidepart">
+                   <input type="text" name="q" value/>
+                   <input type="submit" value="Search" />
+               </form>
+
+               {block:Twitter}
+               <div id="twitter" style="display:none;" class="sidepart">
+                <h2><a href="http://twitter.com/{TwitterUsername}">Latest Tweets</a></h2>
+                <div id="tweets"></div>
+            </div>
+
+            <script type="text/javascript">
+            function recent_tweets(data) {
+                for (i=0; i<data.length; i++) {
+                    document.getElementById("tweets").innerHTML =
+                    document.getElementById("tweets").innerHTML +
+                    '<a href="http://twitter.com/{TwitterUsername}/status/' +
+                    (data[i].id_str ? data[i].id_str : data[i].id) +
+                    '"><p class="content">' + data[i].text +
+                    '</p></a>';
+                }
+                document.getElementById("twitter").style.display = 'block';
+            }
+            </script>
+            {/block:Twitter}
+
+        </div> <!-- END #sidebar -->
+        {/block:IfShowSidebar}
+
+    </div> <!-- END #main-wrap -->
+
+    <div id="footer" class="clearfix emphasis footer-part">
+
+        <div class="footer-part">
+            <p>{Title} &copy; 2012</p>
+            <p>
+                "Wireframed" by 
+                <a href="http://thekalaban.tumblr.com">
+                    thekalaban</a> for 
+                    <a href="http://tumblr.com">tumblr</a>
+                </p>
+            </div>
+
+            {block:PermalinkPagination}                
+            <div class="pagination footer-part">
+                {block:PreviousPage}
+                <a href="{PreviousPage}">Newer Posts</a>
+                {/block:PreviousPage}
+
+                {block:NextPage}
+                <a href="{NextPage}">Older Posts</a>
+                {/block:NextPage}
+            </div>
+            {/block:PermalinkPagination}
+
+            <ul class="sitemap footer-part">
+                <li><a href="/">Home</a></li>
+                <li><a href="/archive">Archive</a></li>
+                {block:AskEnabled}
+                <li><a href="/ask">Ask</a></li>
+                {/block:AskEnabled}
+                <li><a href="{RSS}">RSS Feed</a></li>
+                {block:SubmissionsEnabled}
+                <li><a href="/submit">Submit</a></li>
+                {/block:SubmissionsEnabled}
+                {block:HasPages}
+                {block:Pages}
+                <li><a href="{URL}">{Label}</a></li>
+                {/block:Pages}
+                {/block:HasPages}
+            </ul>
+
+        </div>
+
+    </div> <!-- END #page-wrap-->    
+
+    {block:Twitter}
+    <script type="text/javascript" src="/tweets.js"></script>
+    {/block:Twitter}
+
+</body>
+</html>
